@@ -1,0 +1,5 @@
+Website Colors
+#121212 - Black
+#575757 - Text
+#ef4723 - Red
+#ffa678 - Peach
