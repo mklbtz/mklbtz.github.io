@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    {% if page.author %}<meta name="author" content="{{ page.author }}">{% endif %}
+    <title>
+      {% if page.title %}{{page.title}} - {% endif %}
+      {{site.name}}
+    </title>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+  </head>
+  <body>
