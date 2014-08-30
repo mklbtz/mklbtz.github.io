@@ -5,22 +5,22 @@
 <hr>
 
 ## Summary
-- **Web development** experience at UK Department of Communication
-- **iOS app** programming experience at Alltech, Inc.
-- Proficient with **Ruby**, **PHP**, **Python**, **Objective-C** (iOS SDK), C++
+- **Web development** experience at CirrusMio and UK Department of Communication
+- **iOS app** programming experience at CirrusMio and Alltech, Inc.
+- Proficient with **Objective-C** (Cocoa), **Ruby on Rails**, PHP, Python, C++
 - Proficient in relational database design with **MySQL**
+- Bachelor of Science in Computer Science with a Minor in Math from the University of Kentucky
 - Involvement in [Startup Weekend](http://startupweekend.org) and other entrepreneurial opportunities
 
 
-## Education
-- Bachelor of Science in Computer Science with a Minor in Math from the University of Kentucky
-- Relevant courses: Database Systems; Software Engineering; iOS Development; Algorithm Design
-- Major-specific GPA: 2.9
-- Graduation: **May 2014**
-
 
 ## Work Experience
-### Web Developer & Tech Support Specialist — Sept. 2011 - present <br>University of Kentucky, Department of Communication
+### Web & iOS Developer — May 2014 - present <br> CirrusMio, inc.
+
+- **Assisted development of enterprise-level CMS using Ruby on Rails.** Following Agile development practices, our team helped implement this software for a large corporate client. I used tools like Vagrant, Chef, Haml, and Foreman.
+- **Designed and developed an enterprise-level competitor to Dropbox.** For the same client, I made the iOS app for this product. My primary role was the design and implementation of the user interface. 
+
+### Web Developer & Tech Support Specialist — Sept. 2011 - May 2014 <br>University of Kentucky, Department of Communication
 
 - **Designed and developed intern-management software using PHP, MySQL, and Bootstrap.** Worked with a faculty client to build this system and fill three needs: **1)** Provide students with online applications for the internship program. **2)** Allow the director of the internship program to review and approve new applicants. **3)** Keep records of all students and companies who have been involved in the program since 2009.
 - **Built several research websites that allowed researchers to systematically analyze data.** Became proficient with MySQL and [Codeigniter](http://ellislab.com/codeigniter)—an object-oriented PHP framework which served as the application codebase. These websites were useful because they allowed researchers to work efficiently and think creatively.

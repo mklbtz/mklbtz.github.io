@@ -18,6 +18,17 @@ hr {
   border-color: #FFA678;
 }
 
+p {
+  margin-bottom: 30px;
+  line-height: 1.4em;
+}
+
+h1 {
+  font-size: 40pt;
+  line-height: 40px;
+  margin-top: 55px;
+}
+
 .btn {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-width: 3px;
