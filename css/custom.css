@@ -15,10 +15,6 @@
   margin-top: 2em;
 }
 
-#site-header {
-  margin-bottom: 2em;
-}
-
 /* zocial */
 [class*="zocial-"]:before {
   font-family: 'zocial', sans-serif;
