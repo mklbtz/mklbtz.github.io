@@ -62,8 +62,8 @@ if [ $? -ne 0 ]; then pout 'docker'; else shout "$(echo `rails -v`, `bundle -v |
 
 # install node.js
 sudo apt-get -y install npm
-if [ $? -ne 0 ]; then pout 'node.js'; else exclaim "npm $(npm -v)"; fi
+if [ $? -ne 0 ]; then pout 'node.js'; else shout "npm $(npm -v)"; fi
 
 #install postgres
 sudo apt-get -y install postgresql libpq-dev
-if [ $? -ne 0 ]; then pout 'postgresql'; else exclaim "psql --version"; fi
+if [ $? -ne 0 ]; then pout 'postgresql'; else shout "psql --version"; fi
