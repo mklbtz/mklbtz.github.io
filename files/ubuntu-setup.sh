@@ -11,12 +11,16 @@ export clear="\e[0m"
 alias shout='_shout(){ echo -e $green "Installed $1" $clear; }; _shout'
 alias pout='_pout(){ echo -e $red "Could not install $1" $clear; }; _pout'
 
+# default locations, if none given.
+: ${FISH_CONFIG:='http://mklbtz.com/files/config.fish'}
+: ${VIMRC:='http://mklbtz.com/files/vimrc'}
+
 # install fish shell
-sudo apt-get update
+sudo apt-get update && \
 sudo apt-get -y install fish
 if [ $? -ne 0 ]; then pout 'fish'; else shout "$(fish -v)"; fi
-if [ -z "$FISH_CONFIG_URL" ]; then
-  wget "$FISH_CONFIG_URL" -O ~/.config/fish/config.fish
+if [ -z "$FISH_CONFIG" ]; then
+  wget "$FISH_CONFIG" -O ~/.config/fish/config.fish
   shout 'config.fish'
 elif [ -f './config.fish' ]; then
   mv -f ./config.fish ~/.config/fish/config.fish
