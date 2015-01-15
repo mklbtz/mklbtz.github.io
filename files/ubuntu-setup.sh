@@ -109,7 +109,7 @@ rvm_version() { rvm --version | awk '{print $1,$2}'; }
 install_rvm() {
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 && \
   (curl -sSL https://get.rvm.io | sudo bash -s stable) && \
-  source ~/.rvm/scripts/rvm && \
+  source /etc/profile.d/rvm.sh && \
   rvm_version
   if [ $? -ne 0 ]; then
     pout 'rvm'
