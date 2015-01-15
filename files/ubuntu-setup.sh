@@ -6,8 +6,6 @@
 # GITHUB_EMAIL = 'johndoe@example.com'
 
 # default locations, if none given.
-: ${FISH_CONFIG:='http://mklbtz.com/files/config.fish'}
-: ${VIMRC:='http://mklbtz.com/files/vimrc'}
 
 export green="\e[0;30;42m"
 export red="\e[0;30;41m"
@@ -30,27 +28,39 @@ install_fish() {
   sudo apt-get update && \
   sudo apt-get -y install fish && \
   fish_version
-  if [ $? -ne 0 ]; then pout 'fish'; else shout `fish_version`; fi
-  # download or copy config.fish
-  if [ $FISH_CONFIG ]; then
+  if [ $? -ne 0 ]; then
+    pout 'fish';
+  else
+    shout `fish_version`
+    install_fish_config
+  fi
+}
+
+install_fish_config() {
+  # default FISH_CONFIG
+  : ${FISH_CONFIG:='http://mklbtz.com/files/config.fish'}
+  if [[ $FISH_CONFIG == 'http://'* || $FISH_CONFIG == 'https://'* ]]; then
     wget -O ~/.config/fish/config.fish "$FISH_CONFIG"
     shout 'config.fish'
-  elif [ -f './config.fish' ]; then
-    mv -f ./config.fish ~/.config/fish/config.fish
+  elif [ -f "$FISH_CONFIG" ]; then
+    mv -f "$FISH_CONFIG" ~/.config/fish/config.fish
     shout 'config.fish'
   else
-    pout 'config.fish'
+    pout "config.fish ($FISH_CONFIG)"
   fi
 }
 
 install_dotfiles() {
-  # download or copy .vimrc
-  if [ $VIMRC ]; then
+  # default VIMRC
+  : ${VIMRC:='http://mklbtz.com/files/vimrc'}
+  if [[ $VIMRC == 'http://'* || $VIMRC == 'https://'* ]]; then
     wget -O ~/.vimrc "$VIMRC"
     shout '.vimrc'
-  elif [ -f './.vimrc' ]; then
-    mv -f ./.vimrc ~/.vimrc
+  elif [ -f "$VIMRC" ]; then
+    mv -f "$VIMRC" ~/.vimrc
     shout '.vimrc'
+  else
+    pout ".vimrc ($VIMRC)"
   fi
 }
 
