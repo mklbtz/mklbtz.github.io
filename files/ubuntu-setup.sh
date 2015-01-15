@@ -20,14 +20,14 @@ sudo apt-get update && \
 sudo apt-get -y install fish
 if [ $? -ne 0 ]; then pout 'fish'; else shout "$(fish -v)"; fi
 if [ -z "$FISH_CONFIG" ]; then
-  wget "$FISH_CONFIG" -O ~/.config/fish/config.fish
+  wget -O ~/.config/fish/config.fish "$FISH_CONFIG"
   shout 'config.fish'
 elif [ -f './config.fish' ]; then
   mv -f ./config.fish ~/.config/fish/config.fish
   shout 'config.fish'
 fi
 if [ -z "$VIMRC" ]; then
-  wget "$VIMRC" -O ~/.vimrc
+  wget -O ~/.vimrc "$VIMRC"
   shout '.vimrc'
 elif [ -f '.vimrc' ]; then
   mv -f .vimrc ~/.vimrc
