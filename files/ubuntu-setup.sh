@@ -149,3 +149,6 @@ install_all() {
   if [[ -z `which ruby` ]]; then install_ruby; else doubt `ruby_version`; fi
   install_gems
 }
+
+install_all
+exit 0
