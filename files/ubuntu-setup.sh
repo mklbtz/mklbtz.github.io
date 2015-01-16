@@ -28,31 +28,44 @@ doubt() {
   let warnings=warnings+1
 }
 
-fish_version() { fish -v; }
+prepend() { cat $1 $2 > "${2}.prepended";  rm $2; mv "${2}.prepended" $2; }
 
-install_fish() {
-  sudo apt-get -y install fish && \
-  fish_version
-  if [ $? -ne 0 ]; then
-    pout 'fish';
+# 1:PROG, 2:VERSION, 3:INSTALLER, 4:SUCCESS, 5:FAIL
+# tries to install 1 by running 3, if not already present.
+# will run 4 or 5 depending on 3 exit status.
+# will show success messages with 2
+try_install() {
+  : ${2:=`$1 --version`}
+  if [[ -z $(which $1) ]]; then
+    if [[ $($3) ]]; then
+      echo "$($4)"
+      shout "$($2)"
+    else
+      echo "$($5)"
+      pout "$($1)"
+    fi
   else
-    shout `fish_version`
-    install_fish_config
+    doubt "$($2)"
   fi
 }
 
-install_fish_config() {
-  # default FISH_CONFIG
-  : ${FISH_CONFIG:='http://mklbtz.com/files/config.fish'}
-  if [[ $FISH_CONFIG == 'http://'* || $FISH_CONFIG == 'https://'* ]]; then
-    wget -O ~/.config/fish/config.fish "$FISH_CONFIG"
-    shout 'config.fish'
-  elif [ -f "$FISH_CONFIG" ]; then
-    mv -f "$FISH_CONFIG" ~/.config/fish/config.fish
-    shout 'config.fish'
-  else
-    pout "config.fish ($FISH_CONFIG)"
-  fi
+install_fish() {
+  fish_version() { fish -v; }
+  get_fish() { sudo apt-get -y install fish; }
+  install_fish_config() {
+    # default FISH_CONFIG
+    : ${FISH_CONFIG:='http://mklbtz.com/files/config.fish'}
+    if [[ $FISH_CONFIG == 'http://'* || $FISH_CONFIG == 'https://'* ]]; then
+      wget -O ~/.config/fish/config.fish "$FISH_CONFIG"
+      shout 'config.fish'
+    elif [ -f "$FISH_CONFIG" ]; then
+      mv -f "$FISH_CONFIG" ~/.config/fish/config.fish
+      shout 'config.fish'
+    else
+      pout "config.fish ($FISH_CONFIG)"
+    fi
+  }
+  try_install 'fish' 'fish_version' 'get_fish' 'install_fish_config'
 }
 
 install_dotfiles() {
@@ -69,85 +82,73 @@ install_dotfiles() {
   fi
 }
 
-git_version() { git --version | awk '{print $1,$3}'; }
-
 install_git() {
-  sudo apt-get -y install git && \
-  git config --global user.name "$GITHUB_NAME" && \
-  git config --global user.email "$GITHUB_EMAIL" && \
-  git_version
-  if [ $? -ne 0 ]; then pout 'git'; else shout `git_version` ; fi
+  git_version() { git --version | awk '{print $1,$3}'; }
+  get_git() { sudo apt-get -y install git; }
+  success() { git config --global user.name "$GITHUB_NAME"; git config --global user.email "$GITHUB_EMAIL"; }
+  try_install 'git' 'git_version' 'get_git' 'success'
 }
-
-docker_version() { docker -v | awk '{print $1,$3}'; }
 
 install_docker() {
-  (curl -sSL https://get.docker.com/ubuntu/ | sudo sh) && \
-  source /etc/bash_completion.d/docker && \
-  docker_version
-  if [ $? -ne 0 ]; then pout 'docker'; else shout `docker_version`; fi
+  docker_version() { docker -v | awk '{print $1,$3}'; }
+  get_docker() { curl -sSL https://get.docker.com/ubuntu/ | sudo sh; }
+  success() { source /etc/bash_completion.d/docker; }
+  try_install 'docker' 'docker_version' 'get_docker' 'success'
 }
-
-npm_version() { if [ `which npm` ]; then echo "npm $(npm -v;)"; fi; }
 
 install_npm() {
-  sudo apt-get -y install npm && npm_version
-  if [ $? -ne 0 ]; then pout 'node.js'; else shout npm_version; fi
+  npm_version() { if [ `which npm` ]; then echo "npm $(npm -v;)"; fi; }
+  get_npm() { sudo apt-get -y install npm; }
+  try_install 'npm' 'npm_version' 'get_npm'
 }
-
-python_version() { python --version; }
 
 install_python() {
-  sudo apt-get -y install python python-software-properties && python_version
-  if [ $? -ne 0 ]; then pout 'python'; else shout python_version; fi
+  python_version() { python --version; }
+  get_python() { sudo apt-get -y install python python-software-properties && python_version; }
+  try_install 'python' "python_version" 'get_python'
 }
-
-psql_version() { psql --version; }
 
 install_psql() {
-  sudo apt-get -y install postgresql libpq-dev && psql_version
-  if [ $? -ne 0 ]; then pout 'postgresql'; else shout "psql_version"; fi
+  psql_version() { psql --version; }
+  get_psql() { sudo apt-get -y install postgresql libpq-dev && psql_version; }
+  try_install 'psql' 'psql_version' 'get_psql'
 }
-
-rvm_version() { rvm --version | awk '{print $1,$2}'; }
 
 install_rvm() {
-  gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 && \
-  (curl -sSL https://get.rvm.io | sudo bash -s stable) && \
-  source /etc/profile.d/rvm.sh && \
-  rvm_version
-  if [ $? -ne 0 ]; then
-    pout 'rvm'
-  else
-    rvm requirements
-    shout `rvm_version`
-  fi
+  rvm_version() { rvm --version | awk '{print $1,$2}'; }
+  get_rvm() {
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 && \
+    (curl -sSL https://get.rvm.io | sudo bash -s stable) && \
+    source /etc/profile.d/rvm.sh
+  }
+  try_install 'rvm' 'rvm_version' 'get_rvm'
 }
-
-rbenv_version() { rbenv -v; }
 
 install_rbenv() {
-  (curl https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash) && \
-  echo '
-# rbenv configuration
-export RBENV_ROOT="${HOME}/.rbenv"
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi' >> ~/.bashrc && source ~/.bashrc && \
-  rbenv bootstrap-ubuntu-12-04
-  if [ $? -ne 0 ]; then pout 'rbenv'; else shout `rbenv_version`; fi
+  rbenv_version() { rbenv -v; }
+  rbenv_script() { sudo apt-get install rbenv; }
+  bashrc_config() {
+    BASHRC_CONFIG='# rbenv config\nexport RBENV_ROOT="${HOME}/.rbenv"\nif [ -d "${RBENV_ROOT}" ]; then\n  export PATH="${RBENV_ROOT}/bin:${PATH}"\n  eval "$(rbenv init -)"\nfi'
+    echo -e "$BASHRC_CONFIG" >> ~/.bashrc
+    source ~/.bashrc
+    echo "XXXXXXXXXXXXXXXX $(which rbenv)"
+    rbenv init -
+  }
+  get_rbenv() {
+    rbenv_script && bashrc_config && rbenv bootstrap-ubuntu-12-04
+  }
+  try_install 'rbenv' 'rbenv_version' 'get_rbenv'
 }
 
-ruby_version() { ruby -v | awk '{print $1,$2}'; }
 
 install_ruby() {
+  ruby_version() { ruby -v | awk '{print $1,$2}'; }
+  get_ruby_rvm() { rvm install ruby && rvm use ruby --default && ruby_version; }
   if [ `which rbenv` ]; then
-    rbenv install 2.1.1 && rbenv rehash && rbenv global 2.1.1
-    # rvm install ruby && rvm use ruby --default && ruby_version
-    if [ $? -ne 0 ]; then pout 'ruby'; else shout `ruby_version`; fi
+    # PROG='ruby' VERSION='ruby_version' INSTALL='get_ruby_rbenv' try_install
+    try_install 'ruby_' 'ruby_version' 'rbenv install 2.1.1' 'rbenv rehash; rbenv global 2.1.1'
   else
-    pout 'ruby'
+    pout 'ruby (no rbenv)'
   fi
 }
 
@@ -158,27 +159,25 @@ install_gems() {
     gem install rails foreman && rbenv rehash
     if [ $? -ne 0 ]; then pout 'gems'; else shout 'gems'; fi
   else
-    pout 'gems'
+    pout 'gems (no ruby)'
   fi
 }
 
 install_all() {
+  sudo apt-get update
   let successes=0
   let errors=0
   let warnings=0
-  install_dotfiles
-  if [[ -z `which fish` ]]; then install_fish; else doubt `fish_version`; fi
-  if [[ -z `which git` ]]; then install_git; else doubt `git_version`; fi
-  if [[ -z `which docker` ]]; then install_docker; else doubt `docker_version`; fi
-  if [[ -z `which npm` ]]; then install_npm; else doubt `npm_version`; fi
-  if [[ -z `which python` ]]; then install_python; else doubt `python_version`; fi
-  if [[ -z `which psql` ]]; then install_psql; else doubt `psql_version`; fi
-  if [[ -z `which rbenv` ]]; then install_rbenv; else doubt `rbenv_version`; fi
-  if [[ -z `which ruby` ]]; then install_ruby; else doubt `ruby_version`; fi
-  install_gems
+  install_dotfiles; echo
+  install_fish; echo
+  install_git; echo
+  install_docker; echo
+  install_npm; echo
+  install_python; echo
+  install_psql; echo
+  install_rbenv; echo
+  install_ruby; echo
+  install_gems; echo
+  echo Done.
   echo -e $green $successes "Installed" $yellow $warnings "Skipped" $red $errors "Failed" $clear
 }
-
-sudo apt-get update
-install_all
-exit 0
