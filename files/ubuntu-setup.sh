@@ -156,7 +156,7 @@ install_gems() {
   if [ `which ruby` ]; then
     echo "gem: --no-document" >> ~/.gemrc
     gem install bundler rake && rbenv rehash && \
-    gem install rails foreman && rbenv rehash
+    gem install rails foreman chef fog && rbenv rehash
     if [ $? -ne 0 ]; then pout 'gems'; else shout 'gems'; fi
   else
     pout 'gems (no ruby)'
@@ -168,16 +168,16 @@ install_all() {
   let successes=0
   let errors=0
   let warnings=0
-  install_dotfiles; echo
-  install_fish; echo
-  install_git; echo
-  install_docker; echo
-  install_npm; echo
-  install_python; echo
-  install_psql; echo
-  install_rbenv; echo
-  install_ruby; echo
-  install_gems; echo
+  install_dotfiles
+  install_fish
+  install_git
+  install_docker
+  install_npm
+  install_python
+  install_psql
+  install_rbenv
+  install_ruby
+  install_gems
   echo Done.
   echo -e $green $successes "Installed" $yellow $warnings "Skipped" $red $errors "Failed" $clear
 }
