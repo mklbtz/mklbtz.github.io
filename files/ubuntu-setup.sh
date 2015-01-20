@@ -35,7 +35,7 @@ prepend() { cat $1 $2 > "${2}.prepended";  rm $2; mv "${2}.prepended" $2; }
 # will run 4 or 5 depending on 3 exit status.
 # will show success messages with 2
 try_install() {
-  : ${2:=`$1 --version`}
+  : ${2:='$1 --version'}
   if [[ -z $(which $1) ]]; then
     if [[ $($3) ]]; then
       echo "$($4)"
@@ -65,7 +65,7 @@ install_fish() {
       pout "config.fish ($FISH_CONFIG)"
     fi
   }
-  try_install 'fish' 'fish_version' 'get_fish' 'install_fish_config'
+  try_install 'fish' 'fish_version' 'get_fish' 'install_fish_config' 'sudo usermod --shell `which fish` ubuntu'
 }
 
 install_dotfiles() {
@@ -126,16 +126,15 @@ install_rvm() {
 
 install_rbenv() {
   rbenv_version() { rbenv -v; }
-  rbenv_script() { sudo apt-get install rbenv; }
+  rbenv_script() { curl -L https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash; }
   bashrc_config() {
     BASHRC_CONFIG='# rbenv config\nexport RBENV_ROOT="${HOME}/.rbenv"\nif [ -d "${RBENV_ROOT}" ]; then\n  export PATH="${RBENV_ROOT}/bin:${PATH}"\n  eval "$(rbenv init -)"\nfi'
     echo -e "$BASHRC_CONFIG" >> ~/.bashrc
     source ~/.bashrc
-    echo "XXXXXXXXXXXXXXXX $(which rbenv)"
     rbenv init -
   }
   get_rbenv() {
-    rbenv_script && bashrc_config && rbenv bootstrap-ubuntu-12-04
+    bashrc_config && rbenv_script && rbenv bootstrap-ubuntu-10-04 && rbenv bootstrap-ubuntu-12-04 && rbenv bootstrap-ubuntu-12-10
   }
   try_install 'rbenv' 'rbenv_version' 'get_rbenv'
 }
