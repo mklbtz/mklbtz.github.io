@@ -1,6 +1,8 @@
 <div class="container">
-  <hr>
-  {% for post in paginator.posts %}
-    {% include blog_post.html %}
-  {% endfor %}
+  <div class="col-xs-12">
+    <hr>
+    {% for post in paginator.posts %}
+      {% include post.html %}
+    {% endfor %}
+  </div>
 </div>
