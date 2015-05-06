@@ -1,6 +1,6 @@
 ---
 title: First Post
-date: 2015-05-06
+layout: default
 ---
 
 This is just an example post for me to test styles, etc. with. 
