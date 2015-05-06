@@ -1,6 +1,6 @@
 ---
 title: First Post
-layout: default
+layout: post
 ---
 
 This is just an example post for me to test styles, etc. with. 
