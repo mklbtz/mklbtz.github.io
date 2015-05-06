@@ -45,6 +45,10 @@ h3#site-subhead {
   margin-bottom: 1em;
 }
 
+#post-list {
+  padding-top: 3em;
+}
+
 aritcle.post {
   padding-top: 2em;
   padding-bottom: 1em;
@@ -56,7 +60,7 @@ article.post > h1 {
 }
 
 article.post > time {
-  /* just here for look-sees */
+  padding-left: 1em;
 }
 
 /* Button mods! */
