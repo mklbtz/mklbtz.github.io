@@ -5,4 +5,9 @@
   {{ content }}
 </div>
 {% include footer.html %}
+<div class="containter">
+  {% for post in paginator.posts %}
+    {% include blog_post.html %}
+  {% endfor %}
+</div>
 {% include html_close.html %}
