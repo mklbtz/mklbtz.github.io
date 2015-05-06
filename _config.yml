@@ -2,4 +2,3 @@ name: Michael Bates
 markdown: redcarpet
 highlighter: pygments
 exclude: ["Gemfile", "Gemfile.lock", "README.md", "CNAME"]
-paginate: 5
