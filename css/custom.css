@@ -7,6 +7,7 @@
   #78D0FF - Maya Blue - Info
   #FFE978 - Dandylion Yellow - Warning
   #FF6312 - Flame Red - Danger
+  #333    - Blackish
 */
 
 /* zocial */
@@ -25,7 +26,8 @@
 }
 
 hr {
-  border-color: #FFA678;
+  border-color: #333;
+  border-width: 3px;
 }
 
 p {
