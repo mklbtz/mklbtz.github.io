@@ -1,0 +1,5 @@
+<article class="post">
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p><small><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></small></p>
+  {{ post.content }}
+</article>
