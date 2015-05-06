@@ -1,0 +1,6 @@
+<div class="container">
+  <hr>
+  {% for post in paginator.posts %}
+    {% include blog_post.html %}
+  {% endfor %}
+</div>
