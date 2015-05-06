@@ -9,15 +9,8 @@
   #FF6312 - Flame Red - Danger
 */
 
-@import url(http://weloveiconfonts.com/api/?family=zocial);
-
 #footer {
   margin-top: 2em;
-}
-
-/* zocial */
-[class*="zocial-"]:before {
-  font-family: 'zocial', sans-serif;
 }
 
 .header-border {
@@ -46,6 +39,21 @@ h3#site-subhead {
   margin-bottom: 1em;
 }
 
+aritcle.post {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+article.post > h1 {
+  font-size: 20pt;
+  line-height: 1em;
+}
+
+article.post > time {
+  /* just here for look-sees */
+}
+
+/* Button mods! */
 .btn {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-width: 3px;
@@ -198,4 +206,10 @@ h3#site-subhead {
   color: #dbdbdb;
   background-color: #fff;
   border-color: #dbdbdb;
+}
+
+/* zocial */
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
 }
