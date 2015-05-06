@@ -9,6 +9,12 @@
   #FF6312 - Flame Red - Danger
 */
 
+/* zocial */
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
 #footer {
   margin-top: 2em;
 }
@@ -206,10 +212,4 @@ article.post > time {
   color: #dbdbdb;
   background-color: #fff;
   border-color: #dbdbdb;
-}
-
-/* zocial */
-@import url(http://weloveiconfonts.com/api/?family=zocial);
-[class*="zocial-"]:before {
-  font-family: 'zocial', sans-serif;
 }
