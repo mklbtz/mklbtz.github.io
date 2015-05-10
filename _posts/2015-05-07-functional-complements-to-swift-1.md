@@ -57,5 +57,5 @@ Our `partition` is, obviously, much more terse and readable. I haven’t needed 
 
 [Check out the full code.][gist]
 
-[gist]: https://github.com/mklbtz
+[gist]: https://gist.github.com/mklbtz/7181da7f3b5db7745817
 
