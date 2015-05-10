@@ -1,5 +1,5 @@
 ---
-title: Functional Complements to Swift
+title: Functional Complements to Swift, Part 1
 layout: post
 ---
 > In exploring ways to use functional programming concepts in Swift, I’ve made some additions to its basic language features. This is part of an ongoing series about functional components I’ve added to Swift. 
