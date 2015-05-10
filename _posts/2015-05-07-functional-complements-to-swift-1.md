@@ -32,7 +32,7 @@ nums.partition { n in
 	n % 2 == 0 ? "even" : "odd"
 }
 ```
-{% end highlight %}
+{% endhighlight %}
 
 This will give us the following Dictionary.
 
@@ -51,7 +51,7 @@ nums.reduce(groups) { (var groups, n) in
   return groups
 }
 ```
-{% end highlight %}
+{% endhighlight %}
 
 Our `partition` is, obviously, much more terse and readable. I haven’t needed to use this method in any projects yet, but I can see it being very useful somewhere. 
 
