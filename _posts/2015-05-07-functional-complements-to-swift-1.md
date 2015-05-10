@@ -2,7 +2,7 @@
 title: Functional Complements to Swift
 layout: post
 ---
->> In exploring ways to use functional programming concepts in Swift, I’ve made some additions to its basic language features. This is part of an ongoing series about functional components I’ve added to Swift. 
+> In exploring ways to use functional programming concepts in Swift, I’ve made some additions to its basic language features. This is part of an ongoing series about functional components I’ve added to Swift. 
 
 Here, I’ve added a function to Array called `partition`. In short, the function will partition the Array into a Dictionary based on a function which takes an Element of the Array and returns its corresponding Key into the Dictionary.
 
