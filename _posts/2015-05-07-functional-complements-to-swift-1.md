@@ -42,8 +42,7 @@ This will give us the following Dictionary.
 
 Without our method, we could could achieve the same thing using Array’s `reduce(initial: combine:)`, like so.
 
-{% highlight swift %}
-```
+```swift
 let groups = ["odd": [Int](), "even": [Int]()]
 nums.reduce(groups) { (var groups, n) in
   let key = n % 2 == 0 ? "even" : "odd"
@@ -51,7 +50,6 @@ nums.reduce(groups) { (var groups, n) in
   return groups
 }
 ```
-{% endhighlight %}
 
 Our `partition` is, obviously, much more terse and readable. I haven’t needed to use this method in any projects yet, but I can see it being very useful somewhere. 
 
