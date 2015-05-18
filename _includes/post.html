@@ -1,5 +1,17 @@
-<article class="post">
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <p><small><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></small></p>
-  {{ post.content }}
+<article class="post row">
+  <div class="col-xs-12">
+    <header>
+      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <p><small>
+        {% if post.date %}
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date_to_string }}
+          </time>
+          &ensp;
+        {% endif %}
+        <a href="/feed.xml" class="text-info">Subscribe &rarr;</a>
+      </small></p>
+    </header>
+    {{ content }}
+  </div>
 </article>
