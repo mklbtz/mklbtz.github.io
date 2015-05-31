@@ -71,3 +71,15 @@ p {
 #pagination {
   margin-bottom: 1em;
 }
+
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro&subset=latin,latin-ext);
+
+code {
+  font-family: 'Source Code Pro', 'monaco', 'fixed-width';
+  font-weight: 400;
+}
+
+pre {
+  font-family: 'Source Code Pro', 'monaco', 'fixed-width';
+  font-weight: 400;
+}
