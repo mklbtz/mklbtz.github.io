@@ -53,8 +53,15 @@ p {
 }
 
 .post header h1 {
-  font-size: 20pt;
+  font-size: 25pt;
   line-height: 1em;
+}
+
+.post header h1 a {
+  color: #333;
+}
+.post header h1 a:hover {
+  color: #FF6312;
 }
 
 .post header time {
