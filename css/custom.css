@@ -83,3 +83,7 @@ pre {
   font-family: 'Source Code Pro', 'monaco', 'fixed-width';
   font-weight: 400;
 }
+
+article img {
+  width: 100%;
+}
