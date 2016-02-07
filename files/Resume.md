@@ -10,10 +10,10 @@
 - **Delivered multiple web and mobile apps** for enterprise clients.
 - **Lead a small team of developers** through one such project delivery.
 - **Proficient in many languages**, including Swift, Ruby, and JavaScript.
-- Familiar with infrastructure technology, including Docker and many Amazon Web Services.
-- Involvement in community events, such as [Startup Weekend](http://startupweekend.org) and a [Code for America brigade](http://www.codeforamerica.org/).
+- **Familiar with infrastructure technology**, including Docker and many Amazon Web Services.
+- Involvement in community events, such as [Startup Weekend](http://startupweekend.org) and a [Code for America](http://www.codeforamerica.org/) brigade.
 
-## Web & iOS Developer at CirrusMio, Inc.
+## Software Developer at CirrusMio, Inc.
 
 May 2014 - present
 
