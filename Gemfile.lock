@@ -125,5 +125,8 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  redcarpet
+  kramdown
   rouge (~> 1.7)
+
+BUNDLED WITH
+   1.15.3

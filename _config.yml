@@ -1,8 +1,8 @@
 name: Michael Bates
 description: Web and iOS programming with passion and precision.
 url: http://mklbtz.com
-markdown: redcarpet
-redcarpet:
+markdown: kramdown
+kramdown:
   syntax_highlighter: rouge
 exclude: ["Gemfile", "Gemfile.lock", "README.md", "CNAME"]
 paginate: 5

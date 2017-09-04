@@ -6,7 +6,7 @@ layout: post
 
 Here, I’ve added a function to Array called `partition`. In short, the function will partition the Array into a Dictionary based on a function which takes an Element of the Array and returns its corresponding Key into the Dictionary.
 
-```swift
+~~~ swift
 extension Array {
   func partition<Key>(key: (Element)->Key) -> [Key: [Element]] {
   var groups = [Key: [Element]]()
@@ -19,33 +19,33 @@ extension Array {
     return groups
   }
 }
-```
+~~~
 
 Now we can use the method to partition our arrays!
 
-```swift
+~~~ swift
 let nums = [1,2,3,4,5,6,7,8,9,10]
 nums.partition { n in
 	n % 2 == 0 ? "even" : "odd"
 }
-```
+~~~
 
 This will give us the following Dictionary.
 
-```swift
+~~~ swift
 ["odd": [1, 3, 5, 7, 9], "even": [2, 4, 6, 8, 10]]
-```
+~~~
 
 Without our method, we could could achieve the same thing using Array’s `reduce(initial: combine:)`, like so.
 
-```swift
+~~~ swift
 let groups = ["odd": [Int](), "even": [Int]()]
 nums.reduce(groups) { (var groups, n) in
   let key = n % 2 == 0 ? "even" : "odd"
   groups[key]?.append(n)
   return groups
 }
-```
+~~~
 
 Our `partition` is, obviously, much more terse and readable. I haven’t needed to use this method in any projects yet, but I can see it being very useful somewhere. 
 

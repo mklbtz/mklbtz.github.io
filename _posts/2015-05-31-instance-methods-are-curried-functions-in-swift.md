@@ -5,18 +5,18 @@ link: http://oleb.net/blog/2014/07/swift-instance-methods-curried-functions/
 ---
 This is a really neat technical detail of Swift: under the hood, instance methods can be accessed directly through the class as a curried function. If you don't know what function currying is, it's something best explained through example. Here is the same function in curried and non-curried forms:
 
-```swift
+~~~ swift
 func normalFunc(a: Int, b: Int) -> Int
 func curryFunc(a: Int) -> (b: Int) -> Int
-```
+~~~
 
 That's a function returning a function returning an `Int`. Those familiar with Javascript will recognize this from the ability to partially apply parameters using `.bind()`. So, when I say that instance methods are curried class methods, I mean that these two method calls are identical:
 
-```swift
+~~~ swift
 let message = "spicy curry is tasty!"
 message.hasPrefix("spicy")
 String.hasPrefix(message)("spicy")
-```
+~~~
 
 [Ole Begemann]({{page.link}}) tipped me off to a really compelling use case for this feature. He shows how to make a type-safe target-action pattern that does not rely on selectors or Objective-C’s dynamic message dispatcher. If you're not sure why that's so cool, he offers this tidbit of wisdom:
 
