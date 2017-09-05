@@ -33,6 +33,7 @@ p {
   line-height: 1.4em;
 }
 
+header h1,
 #site-title {
   font-size: 40pt;
   line-height: 1em;
@@ -40,6 +41,7 @@ p {
   margin-bottom: 0.2em;
 }
 
+header h3,
 #site-subhead {
   font-size: 20px;
   line-height: 1.33em;
@@ -48,24 +50,19 @@ p {
 }
 
 #logo {
-  /*margin-top: 55px;*/
   max-height: 85px;
   max-width: 85px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 667px) {
+  header h1,
   #site-title {
     font-size: 20pt;
   }
 
+  header h1,
   #site-subhead {
     font-size: 14px;
-  }
-
-  #logo {
-    /*margin-top: 35px;*/
-    max-height: 55px;
-    max-width: 55px;
   }
 }
 
