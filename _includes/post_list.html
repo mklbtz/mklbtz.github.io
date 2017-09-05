@@ -1,4 +1,7 @@
-<h1 id="Blog Posts">Blog Posts</h1>
+<h1 id="Blog Posts">
+  Blog Posts
+  <a href="/feed.xml" class="small">Subscribe &rarr;</a>
+</h1>
 {% for post in paginator.posts %}
   {% assign content = post.content %}
   {% include post.html %}
