@@ -1,6 +1,6 @@
 <section id="welcome-message" class="row">
   <div class="col-xs-12">
-    <p class="lead">Hello!</p >
+    <p class="lead">Hello!</p>
     <p>
       I am a software developer with experience in delivering Web and iOS apps to enterprise-scale companies. I am a big fan of Swift but I professionally work with Ruby on Rails and JavaScript. Functional programming is my current jam. I am familiar with infrastructure technology, including Docker and many AWS tools. Employed by <a href="http://maketime.io">MakeTime</a> in Lexington KY, I am helping build a new on-demand future for the American manufacturing industry.
     </p>
@@ -12,9 +12,10 @@
     </p>
   </div>
   <div class="col-sm-12">
-    <a href="/resume" class="btn btn-default">My R&eacute;sum&eacute;</a>
-    <a href="http://github.com/mklbtz" class="btn btn-default">My Repos</a>
-    <a href="http://gist.github.com/mklbtz" class="btn btn-default">My Gists</a>
+    {% include self_references.html %}
+  </div>
+  <div class="col-xs-12">
+    {% include social_links.html %}
     <hr>
   </div>
 </section>

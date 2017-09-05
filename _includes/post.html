@@ -1,7 +1,7 @@
 <article class="post row">
   <div class="col-xs-12">
     <header>
-      <h1>
+      <h2>
         {% if post.link %}
           <a href="{{ post.link }}" target="_blank">
             <i>{{ post.title }}</i> &rarr;
@@ -9,7 +9,7 @@
         {% else %}
           <a href="{{ post.url }}">{{ post.title }}</a>
         {% endif %}
-      </h1>
+      </h2>
       <p><small>
         {% if post.date %}
           <time datetime="{{ post.date | date_to_xmlschema }}">
