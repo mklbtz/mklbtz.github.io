@@ -37,12 +37,36 @@ p {
   font-size: 40pt;
   line-height: 1em;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.2em;
 }
 
 #site-subhead {
+  font-size: 20px;
   line-height: 1.33em;
   margin-bottom: 1em;
+  margin-top: 0em;
+}
+
+#logo {
+  /*margin-top: 55px;*/
+  max-height: 85px;
+  max-width: 85px;
+}
+
+@media (max-width: 767px) {
+  #site-title {
+    font-size: 20pt;
+  }
+
+  #site-subhead {
+    font-size: 14px;
+  }
+
+  #logo {
+    /*margin-top: 35px;*/
+    max-height: 55px;
+    max-width: 55px;
+  }
 }
 
 .post + .post {
