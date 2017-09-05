@@ -28,6 +28,10 @@ a.text-danger {
   text-shadow: none;
   -webkit-box-shadow: none;
 }
+.btn:disabled,
+.btn[disabled] {
+  border-style: dashed;
+}
 .btn:active,
 .btn.active {
   background-image:none;
