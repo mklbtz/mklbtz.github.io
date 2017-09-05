@@ -53,9 +53,9 @@ a.text-danger {
 }
 .btn-default:disabled,
 .btn-default[disabled] {
-  color: #dbdbdb;
+  color: #888;
   background-color: #fff;
-  border-color: #dbdbdb;
+  border-color: #888;
 }
 .btn-primary {
   color: #FFA678;
@@ -76,9 +76,9 @@ a.text-danger {
 }
 .btn-primary:disabled,
 .btn-primary[disabled] {
-  color: #dbdbdb;
+  color: #888;
   background-color: #fff;
-  border-color: #dbdbdb;
+  border-color: #888;
 }
 .btn-success {
   color: #78FF79;
@@ -99,9 +99,9 @@ a.text-danger {
 }
 .btn-success:disabled,
 .btn-success[disabled] {
-  color: #dbdbdb;
+  color: #888;
   background-color: #fff;
-  border-color: #dbdbdb;
+  border-color: #888;
 }
 .btn-info {
   color: #78D0FF;
@@ -122,9 +122,9 @@ a.text-danger {
 }
 .btn-info:disabled,
 .btn-info[disabled] {
-  color: #dbdbdb;
+  color: #888;
   background-color: #fff;
-  border-color: #dbdbdb;
+  border-color: #888;
 }
 .btn-warning {
   color: #FFE978;
@@ -145,9 +145,9 @@ a.text-danger {
 }
 .btn-warning:disabled,
 .btn-warning[disabled] {
-  color: #dbdbdb;
+  color: #888;
   background-color: #fff;
-  border-color: #dbdbdb;
+  border-color: #888;
 }
 .btn-danger {
   color: #EF4723;
@@ -168,9 +168,9 @@ a.text-danger {
 }
 .btn-danger:disabled,
 .btn-danger[disabled] {
-  color: #dbdbdb;
+  color: #888;
   background-color: #fff;
-  border-color: #dbdbdb;
+  border-color: #888;
 }
 
 /**********************/
