@@ -3,6 +3,4 @@
   {% assign content = post.content %}
   {% include post.html %}
 {% endfor %}
-{% if paginator.total_pages > 1 %}
-  {% include pagination.html %}
-{% endif %}
+{% include pagination.html %}

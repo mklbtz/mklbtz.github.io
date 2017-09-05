@@ -1,15 +1,13 @@
 <div class="row">
   <div class="col-xs-12">
     <div id="pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="btn btn-default">&larr;</a>
-      {% else %}
-        <span class="btn btn-default" disabled>&larr;</span>
-      {% endif %}
       {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="btn btn-default pull-right">&rarr;</a>
+        <a href="{{ paginator.next_page_path }}" class="btn btn-default">&larr; Older</a>
       {% else %}
-        <span class="btn btn-default pull-right" disabled>That's all, folks!</span>
+        <span class="btn btn-default" disabled>That's all, folks!</span>
+      {% endif %}
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="btn btn-default pull-right">Newer &rarr;</a>
       {% endif %}
     </div>
   </div>
