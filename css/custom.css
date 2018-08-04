@@ -18,13 +18,13 @@
 }
 
 .banner-border {
-  border-bottom: solid 3px;
   border-color: #FF6312;
+  border-bottom: solid 2px;
 }
 
 hr {
   border-color: #333;
-  border-width: 3px;
+  border-width: 2px;
 }
 
 p {
@@ -61,6 +61,7 @@ header.site > * + * {
 #logo {
   max-height: 85px;
   max-width: 85px;
+  border: 2px solid black;
 }
 
 @media (max-width: 667px) {
