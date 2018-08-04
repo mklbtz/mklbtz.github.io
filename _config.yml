@@ -5,4 +5,5 @@ markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
 exclude: ["Gemfile", "Gemfile.lock", "README.md", "CNAME"]
+plugins: [jekyll-paginate]
 paginate: 3
