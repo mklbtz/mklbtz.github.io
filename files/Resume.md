@@ -1,8 +1,7 @@
 # Michael Bates
 ### *Web and iOS Development with Passion and Precision*
 
-[mklbtz@gmail.com](mailto:mklbtz@gmail.com) — [(502) 548-5769](tel:5025485769) — [mklbtz.com](http://mklbtz.com)
-<hr>
+[mklbtz@gmail.com](mailto:mklbtz@gmail.com) - [(502) 548-5769](tel:5025485769) - [mklbtz.com](http://mklbtz.com)
 
 ## Summary
 
@@ -16,11 +15,11 @@
 
 ## Software Developer at MakeTime, Inc.
 
-March 2016 – Present
+March 2016 - July 2018
 
-- **Developed the MakeTime platform** with a team of twelve people using Ruby on Rails and other open-source technology.
-- **Built microservices** that improve the main MakeTime platform without adding bloat to its codebase.
-- **Integrated machine-learning algorithms** into MakeTime platform by coordinating with the Data Science division.
+- **Developed full-stack solutions** for their CNC machining platform using Ruby on Rails and AngularJS. The platform was responsible for over $1 million in transactions in 2017 and continues to grow.
+- **Built UI** for instant budgetary pricing intelligence which leveraged custom machine-learning models. This was MakeTime's differentiator in the manufacturing market space.
+- Built early version of a **matchmaking microservice** that finds viable candidates from MakeTime's network of over 2000 suppliers. This system ultimately allowed MakeTime to grow with a lean fulfillment team of only four members.
 
 ## Software Developer at CirrusMio, Inc.
 
