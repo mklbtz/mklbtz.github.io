@@ -18,8 +18,8 @@
 }
 
 .banner-border {
-  border-color: #FF6312;
   border-bottom: solid 2px;
+  border-color: #004e78;
 }
 
 hr {
@@ -90,7 +90,7 @@ header.site > * + * {
   color: #333;
 }
 .post header h2 a:hover {
-  color: #FFA678;
+  color: #78d0ff;
 }
 
 .post header time {
