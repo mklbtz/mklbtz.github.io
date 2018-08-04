@@ -5,13 +5,12 @@
 
 ## Summary
 
+- **Developed a leading manufacturing platform** that handled over $1 million and thousands of users.
+- **Delivered multiple web and iOS apps** for enterprise clients.
+- **Proficient in many languages**, including Ruby, Swift and JavaScript.
+- **Familiar with infrastructure technology**, including Docker and AWS EC2 & Lambda.
 - **BS in Computer Science** with a Minor in Math from the University of Kentucky.
-- **Delivered multiple web and mobile apps** for enterprise clients.
-- **Lead a small team of developers** through one such project delivery.
-- **Proficient in many languages**, including Swift, Ruby, and JavaScript.
-- **Familiar with infrastructure technology**, including Docker and many Amazon Web Services.
-- Online engagement with open-source language communities.
-- Involvement in community events, such as [Startup Weekend](http://startupweekend.org) and a [Code for America](http://www.codeforamerica.org/) brigade.
+- Meetup organizer and presenter at [Learn Swift Louisville](http://www.meetup.com/Learn-Swift-Louisville).
 
 ## Software Developer at MakeTime, Inc.
 
