@@ -12,12 +12,6 @@
   #333    - Blackish
 */
 
-/* zocial */
-@import url(https://weloveiconfonts.com/api/?family=zocial);
-[class*="zocial-"]:before {
-  font-family: 'zocial', sans-serif;
-}
-
 .banner-border {
   border-bottom: solid 2px;
   border-color: #004e78;
@@ -102,7 +96,7 @@ header.site > * + * {
   margin-bottom: 1em;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro&subset=latin,latin-ext);
 
 code {
   font-family: 'Source Code Pro', 'monaco', 'fixed-width';
