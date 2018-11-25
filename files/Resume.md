@@ -8,9 +8,17 @@
 - **BS in Computer Science** with a Math minor from the University of Kentucky.
 - Meetup organizer and presenter at [Learn Swift Louisville](http://www.meetup.com/Learn-Swift-Louisville).
 
+### Software Developer at Xometry, Inc.
+
+July 2018 - Present
+
+- **Worked remotely** with a distributed team for several months.
+- **Designed micro-service** based on AWS Lambda for integrating with accounting software. 
+- Worked closely with accounting team stakeholders to meet their requirements for this integration. 
+
 ### Software Developer at MakeTime, Inc.
 
-March 2016 - Present
+March 2016 - July 2018 (acquired by Xometry)
 
 - **Developed full-stack solutions** for their CNC machining platform using Ruby on Rails and AngularJS. The platform was responsible for over $1 million in transactions in 2017 and continues to grow.
 - **Built UI** for instant budgetary pricing intelligence which leveraged custom machine-learning models. This was MakeTime's differentiator in the manufacturing market space.
@@ -29,10 +37,4 @@ May 2014 - March 2016
 Sept. 2011 - May 2014
 
 - **Designed and developed intern-management PHP app.** Consulted with faculty members to build an information management system for the student internship program.
-- **Built several research web apps** that allowed researchers to systematically analyze data. These apps allowed researchers to work efficiently and think creatively.
-
-### IT Department Intern at Alltech, Inc.
-
-May 2011 - July 2011
-
-- **Developed a custom iOS app** for Marketing managers to review sales data pulled from XML content on company servers. 
+- **Built several research web apps** that allowed researchers to systematically analyze data, work efficiently and think creatively.
