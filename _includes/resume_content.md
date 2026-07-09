@@ -1,5 +1,9 @@
-- Ten years of app development experience across iOS, web, and server-side.
-- Proficient in many technologies: Swift, ObjC, JavaScript, Ruby; SPM, LLDB, Instruments, Docker.
+<!-- File for generating PDf stored in IAWriter -->
+
+#### Overview
+
+- Twelve years of application development experience across iOS, web, and server-side.
+- Proficient in many technologies: Swift, JavaScript, Ruby on Rails, Python, SPM, LLDB, React, Docker.
 - Experienced in guiding technical direction, building consensus, coordinating with stakeholders.
 
 #### Education
@@ -9,20 +13,20 @@
 
 #### Lead Software Engineer at Capital One • *May 2019—present*
 
-- Tech Lead of a six-person platform engineering team
-- Developed several in-house frameworks used by hundreds of iOS developers, including:
-	- A Redux-like, reactive store architecture for feature logic, compatible with UIKit and SwiftUI.
-	- A URL-parsing and routing system for deep linking to any feature of our modularized app.
-	- A dependency-injection system inspired by SwiftUI.
-- Guided developers by writing documentation and providing one-on-one support. 
+- Tech Lead of a six-person platform engineering team.
+- Lead architecture and development of several platform frameworks used by hundreds of feature developers, including:
+	- A UI-agnostic, Redux-like store architecture for feature logic.
+	- A URL parsing and routing system for deep linking to any feature of our modularized app.
+	- Frameworks for feature toggling, monitoring, dependency injection.
 - Refined the design of these libraries in response to user feedback and usage patterns.
 - Spearheaded technical upgrades in our large and complex codebase:
 	- Adopting Combine and Swift Package Manager (SPM).
 	- Improving our build system’s compile time by 9×.
 	- Using cutting-edge Swift features like ResultBuilders, Concurrency, and Macros.
-- Coordinated with feature dev teams, product owners, and leadership. Set technical requirements, triaged production bugs.
 - Built consensus through weekly technical design meetings with my iOS *and Android* counterparts. 
-- Provided mentorship to three of my peers, to help guide their professional development.
+- Coordinated with feature dev teams, product owners, and leadership to set technical requirements, triage production bugs.
+- Guided developers by writing documentation and providing one-on-one support. 
+- Provided mentorship and professional development to several of my peers.
 
 #### Senior Software Engineer at Xometry, Inc. • *July 2018—May 2019*
 
